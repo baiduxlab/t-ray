@@ -6,4 +6,6 @@ Thanks to the constraint solving of the underlying symbolic executor, T-Ray can 
  
 We evaluated T-Ray with around 100 TAs from three TEEs, viz., OP-TEE, TEEGRIS, and Trustonic, and have found more than 30 bugs, including those running on real world Samsung devices.
 
-# Please stay tuned for further notification of the tool release date.
+## Status
+
+Please stay tuned for further notifications of the release date.

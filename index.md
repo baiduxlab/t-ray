@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+## T-Ray: An Extensible Bug Detection Tool Targeting ARM TrustZone Applications
 
-You can use the [editor on GitHub](https://github.com/baiduxlab/t-ray/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+ARM TrustZone as an emerging technology has been increasingly adopted by consumer electronic devices, such as smartphones, smart homes, automotives, to protect sensitive data, like privacy information, biometrics and keys. Security researchers interested in finding bugs in Trusted Applications (TA) often suffer from onerous labor of reverse engineering in order to understand the TAs' logics and look for security property violations. Traditional bug finding tools don't have prior knowledge of the TrustZone environments, thus failing to accurately model the external dependencies of TA. Also, to the best of our knowledge, there are only a couple of security analysis tools specially designed for TrustZone. All of them are customized to a specific type of bug, or only works for a specific TA or TEE. To address this situation, we build an extensible bug detection tool T-Ray based on symbolic execution, which can automatically run analysis on TA binaries straight out of the box, and support most major TEEs, like OP-TEE, Samsung TEEGRIS, Trustonic, and Qualcomm QSEE. T-Ray is built as a framework that supports pluggable bug detectors. Besides built-in bug detectors that can detect common memory-safety bugs, the researchers can also implement their own bug detectors as plug-ins to fulfill their research goal.
+ 
+Thanks to the constraint solving of the underlying symbolic executor, T-Ray can automatically generate concrete inputs as proof-of-concepts that can trigger bugs. Also, since most of the TA are stateful, they sometimes require a sequence of commands instead of a single command to reach certain "deep" logic. T-Ray is also designed to handle the statefulness of TA by running an iterative symbolic execution on each entry function.
+ 
+We evaluated T-Ray with around 100 TAs from three TEEs, viz., OP-TEE, TEEGRIS, and Trustonic, and have found more than 30 bugs, including those running on real world Samsung devices.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Status
 
-### Markdown
+Please stay tuned for further notifications of the release date.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/baiduxlab/t-ray/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
